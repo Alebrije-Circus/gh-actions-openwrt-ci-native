@@ -12,7 +12,7 @@ runs:
     - env:
         CI_SOURCE_URL: 'https://gitlab.com/ynezz/openwrt-ci/raw/master'
       run: |
-        chmod ugo=rwx $GITHUB_WORKSPACE
+        find $GITHUB_WORKSPACE -type d -exec chmod ugo+w {} \;
         cd $GITHUB_WORKSPACE
         wget -q $CI_SOURCE_URL/Makefile -O Makefile.ci
         make ci-prepare -f Makefile.ci
