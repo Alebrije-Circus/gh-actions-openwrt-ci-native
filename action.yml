@@ -23,6 +23,10 @@ runs:
           --env CI_ENABLE_UNIT_TESTING \
           --env CI_TARGET_BUILD_DEPENDS \
           --env CI_CMAKE_EXTRA_BUILD_ARGS \
+          --env CI_CPPCHECK_EXTRA_ARGS \
+          --env CI_GCC_VERSION_LIST \
+          --env CI_CLANG_VERSION_LIST \
+          --env CI_FEED_BUILD_DEPENDS \
           registry.gitlab.com/ynezz/openwrt-ci/native-testing:latest \
           make ci-native-checks -f Makefile.ci
       shell: bash
